@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jellalshadows-idp/idp-engine/v0.1.0/schemas/platform.json
+apiVersion: idp/v1
+kind: Platform
+github:
+  org: jellalshadows-idp
+  writerAppId: 5255579
+  archiveOnDestroy: true
+  requiredApprovals: 1
+naming:
+  reservedPrefixes: [e2e-, spike-]
+environments:
+  dev:     { aws: { accountId: "000000000001", region: eu-west-1 } }
+  staging: { aws: { accountId: "000000000002", region: eu-west-1 } }
+  pro:     { aws: { accountId: "000000000003", region: eu-west-1 }, protected: true }
+modules:
+  allowedSources: ["git::https://github.com/jellalshadows-idp/"]
