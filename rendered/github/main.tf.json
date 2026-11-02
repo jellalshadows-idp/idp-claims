@@ -1,0 +1,29 @@
+{
+  "provider": {
+    "github": {
+      "owner": "jellalshadows-idp"
+    }
+  },
+  "terraform": {
+    "backend": {
+      "local": {
+        "path": "../../tfstate/github.tfstate"
+      }
+    },
+    "encryption": {
+      "plan": {
+        "enforced": true
+      },
+      "state": {
+        "enforced": true
+      }
+    },
+    "required_providers": {
+      "github": {
+        "source": "integrations/github",
+        "version": "6.13.0"
+      }
+    },
+    "required_version": "1.12.6"
+  }
+}
